@@ -122,7 +122,7 @@ begin
             else
             	if(in_data_valid = '1') then
                     if(write_idx = 320) then
-                        write_idx <= 0;
+                        write_idx <= 1;
                     else
                         write_idx <= write_idx + 1;
                     end if;
@@ -235,7 +235,7 @@ begin
     valid_row_buf(0) <= NOT num_write_buffer when (rst = '0' AND in_pixel_valid = '1') else '0';
     valid_row_buf(1) <= num_write_buffer when (rst = '0' AND in_pixel_valid = '1') else '0';
     
-    out_pixel_valid <= overflow_flag AND NOT pixel_even AND in_pixel_valid and num_write_buffer;
+    out_pixel_valid <= overflow_flag AND NOT pixel_even AND in_pixel_valid AND num_write_buffer;
     row_buf_read(0) <= overflow_flag AND NOT pixel_even;
     row_buf_read(1) <= overflow_flag AND NOT pixel_even;
 
