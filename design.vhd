@@ -102,10 +102,8 @@ end row_buffer;
 architecture rts of row_buffer is
 	type row_type is array (1 to 320) of std_logic_vector(7 downto 0);
 	signal row : row_type;
-    --signal row : std_logic_vector(255 downto 0) := (others => '0');
     signal write_idx : integer range 0 to 320;
     signal read_idx : integer range 0 to 320;
-    signal internal_clk : std_logic;
 begin
 
 	row(write_idx) <= in_data when (in_data_valid = '1' and write_idx > 0);
@@ -171,7 +169,6 @@ architecture rts of memory_control is
     		 	 in_data : in std_logic_vector(7 downto 0);
              	 out_data : out std_logic_vector(15 downto 0));
     end component;
-    signal internal_clk : std_logic;
     signal pixel_counter : integer range 0 to 86760; -- 360*241
     signal pixel_counter_period : integer range 0 to 320;
     signal overflow_flag : std_logic := '0';

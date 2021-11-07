@@ -67,7 +67,7 @@ begin
         arr(7) := "in08.txt";
         arr(8) := "in09.txt";
         arr(9) := "in10.txt";
-        if(rising_edge(clk)) then
+        if(falling_edge(clk)) then
             if(is_reset = '0' AND rst = '0') then
                 rst <= '1';
                 is_reset := '1';
