@@ -266,11 +266,9 @@ architecture rts of design is
     signal intermediate_pixel : std_logic_vector(31 downto 0) := (others => '0');
     signal intermediate_data_valid2 : std_logic := '0';
     signal intermediate_pixel2 : std_logic_vector(31 downto 0) := (others => '0');
-    signal register_valid : std_logic;
-    signal register_pixel : std_logic_vector(7 downto 0);
 begin
 	MEM_CONTROL: memory_control port map (clk, rst, in_valid, in_pixel, intermediate_data_valid, intermediate_pixel);
-    REDUCE: reducer port map (clk, intermediate_data_valid, intermediate_pixel, register_valid, register_pixel);
+    REDUCE: reducer port map (clk, intermediate_data_valid2, intermediate_pixel2, out_valid, out_pixel);
     
     INTERMEDIATE_REGISTER : process(clk)
     begin
