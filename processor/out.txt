@@ -1,0 +1,32 @@
+Memory utilization:
+   text	   data	    bss	    dec	    hex	filename
+   4572	      0	    116	   4688	   1250	main.elf
+Compiling ../../../sw/image_gen/image_gen
+Installing application image to ../../../rtl/core/neorv32_application_image.vhd
+Simulating neorv32_application_image.vhd...
+Tip: Compile application with USER_FLAGS+=-DUART[0/1]_SIM_MODE to auto-enable UART[0/1]'s simulation mode (redirect UART output to simulator console).
+Using simulation runtime args: --stop-time=10ms
+../../rtl/core/neorv32_top.vhd:349:3:@0ms:(assertion note): NEORV32 PROCESSOR IO Configuration: GPIO MTIME UART0 UART1 SPI TWI PWM WDT CFS SLINK NEOLED XIRQ GPTMR 
+../../rtl/core/neorv32_top.vhd:373:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Boot configuration: Direct boot from memory (processor-internal IMEM).
+../../rtl/core/neorv32_top.vhd:397:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Implementing on-chip debugger (OCD).
+../../rtl/core/neorv32_cpu.vhd:171:3:@0ms:(assertion note): NEORV32 CPU ISA Configuration (MARCH): RV32IMACBU_Zicsr_Zicntr_Zihpm_Zifencei_Zfinx_Debug
+../../rtl/core/neorv32_cpu.vhd:193:3:@0ms:(assertion note): NEORV32 CPU CONFIG NOTE: Implementing NO dedicated hardware reset for uncritical registers (default, might reduce area). Set package constant <dedicated_reset_c> = TRUE to configure a DEFINED reset value for all CPU registers.
+../../rtl/core/neorv32_cpu_cp_bitmanip.vhd:147:3:@0ms:(assertion note): Implementing bit-manipulation (B) sub-extensions: ZbbZba
+../../rtl/core/mem/neorv32_imem.default.vhd:89:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Using DEFAULT platform-agnostic IMEM.
+../../rtl/core/mem/neorv32_imem.default.vhd:90:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Implementing processor-internal IMEM as ROM (16384 bytes), pre-initialized with application (4572 bytes).
+../../rtl/core/mem/neorv32_dmem.default.vhd:72:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Using DEFAULT platform-agnostic DMEM.
+../../rtl/core/mem/neorv32_dmem.default.vhd:73:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Implementing processor-internal DMEM (RAM, 8192 bytes).
+../../rtl/core/neorv32_wishbone.vhd:140:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: External Bus Interface - Implementing STANDARD Wishbone protocol.
+../../rtl/core/neorv32_wishbone.vhd:144:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: External Bus Interface - Implementing auto-timeout (256 cycles).
+../../rtl/core/neorv32_wishbone.vhd:148:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: External Bus Interface - Implementing LITTLE-endian byte order.
+../../rtl/core/neorv32_wishbone.vhd:152:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: External Bus Interface - Implementing registered RX path.
+../../rtl/core/neorv32_slink.vhd:175:3:@0ms:(assertion note): NEORV32 PROCESSOR CONFIG NOTE: Implementing 8 RX and 8 TX stream links.
+
+                                                                                       ##                                       
+                                                                                       ##         ##   ##   ##                  
+ ##     ##   #########   ########    ########   ##      ##   ########    ########      ##       ################                
+####    ##  ##          ##      ##  ##      ##  ##      ##  ##      ##  ##      ##     ##     ####            ####              
+## ##   ##  ##          ##      ##  ##      ##  ##      ##          ##         ##      ##       ##   ######   ##                
+##  ##  ##  #########   ##      ##  #########   ##      ##      #####        ##        ##     ####   ######   ####              
+##   ## ##  ##          ##      ##  ##    ##     ##    ##           ##     ##          ##       ##   ######   ##                
+##    ####  ##          ##      ##  ##     ##     ##  ##    ##      ##   ##            ##     ####            ####              
