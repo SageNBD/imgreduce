@@ -71,5 +71,4 @@ def write_output_image():
     with open('image_out.bin', 'wb') as f:
         f.write(bytearray(integer_values))
 
-produce_integer_file()
 write_output_image()
