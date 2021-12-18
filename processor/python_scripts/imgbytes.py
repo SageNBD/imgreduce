@@ -5,24 +5,7 @@ Created on Fri Dec 17 21:38:05 2021
 @author: vitor
 """
 
-def bin2dec(bin_str):
-    power = 7
-    val = 0
-    for ch in bin_str:
-        val += (ch == '1') << power
-        power += -1
-    return val
-
-def dec2bin(num):
-    res = ''
-    while num > 0:
-        res += str(num % 2)
-        num = num // 2
-    
-    while len(res) < 8:
-        res += "0"
-        
-    return res[::-1]
+from binary_utils import dec2bin, bin2dec
 
 def produce_c_array():     
     array_decl = "int img_arr[] = { "
@@ -56,9 +39,9 @@ def produce_integer_file():
     
     for i in range(1, 11):
         if i < 10:    
-            filename = f'in0{i}.txt'
+            filename = f'binary_strings\\in0{i}.txt'
         else:
-            filename = 'in10.txt'
+            filename = 'binary_strings\\in10.txt'
             
         lines = []
         with open(filename, "r") as f:
@@ -90,6 +73,3 @@ def write_output_image():
 
 produce_integer_file()
 write_output_image()
-barr = bytearray([1, 255])
-for byte in barr:
-    print(int.from_bytes(byte, 'little'))
